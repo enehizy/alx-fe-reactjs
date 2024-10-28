@@ -8,12 +8,12 @@ import Footer from './Footer';
 function App() {
 
   return (
-  <>
-  <Header/>
-  <MainContent/>
-  <Footer/>
-  <WelcomeMessage/>
-  </>
+  <div>
+      <Header/>
+      <MainContent/>
+      <Footer/>
+      <WelcomeMessage/>
+  </div>
       
   )
 }
