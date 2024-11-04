@@ -1,5 +1,6 @@
 
 import './App.css'
+import Counter from './components/Counter'
 import WelcomeMessage from './components/WelcomeMessage'
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
   return (
     <>
     <p>hello</p>
-    
+    <Counter/>
 
     </>
    
