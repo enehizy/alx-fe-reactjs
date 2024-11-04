@@ -1,5 +1,5 @@
 import React from 'react';
 
-let profile =React.useContext();
+let userProfile =React.useContext();
 
-export default profile;
+export default userProfile;
