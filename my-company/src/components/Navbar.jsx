@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 function Navbar() {
   return (
-   <div>
+   <div style={{backgroundColor:'grey', display:"flex", justifyContent:"center"}}>
      <Link to="/"/>
      <Link to="/contact"/>
      <Link to="/about"/>
