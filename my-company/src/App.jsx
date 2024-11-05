@@ -8,6 +8,7 @@ import Contact from './Contact.jsx';
 import About from './About.jsx';
 import {
   RouterProvider,
+  Routes
 } from "react-router-dom";
 const routes = createBrowserRouter([
   {
