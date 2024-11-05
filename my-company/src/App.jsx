@@ -6,19 +6,33 @@ import Home from './Home.jsx';
 import Services from './Services.jsx';
 import Contact from './Contact.jsx';
 import About from './About.jsx';
-
+import {
+  RouterProvider,
+} from "react-router-dom";
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home/>,
+  },
+  {
+    path: "/services",
+    element: <Services/>,
+  },
+  {
+    path: "/contact",
+    element: <Contact/>,
+  },
+  {
+    path: "/about",
+    element: <About/>,
+  },
+]);
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/services" component={Services} />
-        <Route path="/contact" component={Contact} />
-    
-    </Switch>
+     <RouterProvider router={routes} />
     </>
   )
 }
