@@ -10,6 +10,7 @@ import {
   RouterProvider,
   Routes
 } from "react-router-dom";
+import Navbar from './components/Navbar.jsx';
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +35,7 @@ function App() {
   return (
     <>
      <RouterProvider router={routes} />
+     <Navbar/>
     </>
   )
 }
