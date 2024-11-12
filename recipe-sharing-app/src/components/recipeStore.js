@@ -2,6 +2,8 @@ import {create} from 'zustand';
 
 export const useRecipeStore=create(set=>({
     recipes: [],
+    favorites: [],
+    recommendations: [],
     addRecipe: (newRecipe) => set(state => ({ recipes: [...state.recipes, newRecipe] })),
     deleteRecipe: (recipeId)=>()=>set((state)=>{
        const updatedRecipe = state.recipes.filter((recipe)=>{
