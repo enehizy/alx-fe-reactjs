@@ -5,7 +5,7 @@ import './App.css'
 import AddRecipeForm from './components/AddRecipeForm'
 import RecipeList from './components/RecipeList'
 import EditRecipeForm from './components/EditRecipeForm'
-import FavoritesList from './components/FavouritesList'
+import FavoritesList from './components/FavoritesList'
 import RecommendationsList from './components/RecommendationsList'
 
 function App() {
