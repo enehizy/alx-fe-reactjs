@@ -5,6 +5,8 @@ import './App.css'
 import AddRecipeForm from './components/AddRecipeForm'
 import RecipeList from './components/RecipeList'
 import EditRecipeForm from './components/EditRecipeForm'
+import FavoritesList from './components/FavouritesList'
+import RecommendationsList from './components/RecommendationsList'
 
 function App() {
  
@@ -14,6 +16,8 @@ function App() {
     <RecipeList/>
      <AddRecipeForm/>
      <EditRecipeForm/>
+     <FavoritesList/>
+     <RecommendationsList/>
     </>
   )
 }
