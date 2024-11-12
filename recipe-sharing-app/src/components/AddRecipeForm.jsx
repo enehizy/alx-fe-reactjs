@@ -1,5 +1,5 @@
 import { useState } from 'react';
-  import { useRecipeStore } from './components/recipeStore';
+  import { useRecipeStore } from './recipeStore';
 
   const AddRecipeForm = () => {
     const addRecipe = useRecipeStore(state => state.addRecipe);
@@ -14,6 +14,8 @@ import { useState } from 'react';
     };
 
     return (
+        <>
+        <h2>Add recipe</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -28,6 +30,7 @@ import { useState } from 'react';
         />
         <button type="submit">Add Recipe</button>
       </form>
+      </>
     );
   };
   export default AddRecipeForm;

@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import AddRecipeForm from './components/AddRecipeForm'
 import RecipeList from './components/RecipeList'
+import EditRecipeForm from './components/EditRecipeForm'
 
 function App() {
  
@@ -12,6 +13,7 @@ function App() {
     <>
     <RecipeList/>
      <AddRecipeForm/>
+     <EditRecipeForm/>
     </>
   )
 }
