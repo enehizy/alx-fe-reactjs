@@ -15,7 +15,7 @@ import {
 } from "react-router-dom";
 import RecipeDetails from './components/RecipeDetails'
 
-const router = createBrowserRouter([
+const Routes = createBrowserRouter([
   {
     path: "/",
     element: <RecipeDetails/>
@@ -26,7 +26,7 @@ function App() {
  
 
   return (
-    <RouterProvider router={router} >
+    <RouterProvider router={Routes} >
           <RecipeList/>
         <AddRecipeForm/>
         <EditRecipeForm/>
