@@ -1,13 +1,13 @@
 import React from 'react'
 import { useQuery } from 'react-query'
-
+  async function fetchPosts(){
+    let response = fetch("https://jsonplaceholder.typicode.com/posts");
+    return response.json()
+  }
 function PostsComponent() {
     let [isPending, isError,error,isLoading, data] =useQuery({
         queryKey:'posts',
-        queryFn:async()=>{
-           let response = fetch("https://jsonplaceholder.typicode.com/posts");
-           return response.json()
-        }
+        queryFn:fetchPosts
     })
     if (isPending) return 'Loading...'
 
