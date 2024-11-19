@@ -1,8 +1,21 @@
 import React from 'react'
-import {Formik,Form,Field,ErrorMessage,validateYupSchema} from "formik"
+import * as Yup from 'yup';
+import {Formik,Form,Field,ErrorMessage} from "formik"
+let schema =Yup.object().shape({
+    username : Yup.string()
+    .min(2,'username too short')
+    .required("Required"),
+    email: Yup.string()
+    .email("Invalid email")
+    .required("Required"),
+    password :Yup.string()
+    .min(3,"password too short")
+    .required("Required")
+   
+})
 function formikForm() {
   return (
-   <Formik initialValues={{email :"" ,password: "" , username :""}}>
+   <Formik initialValues={{email :"" ,password: "" , username :""}} validationSchema={schema}>
      {({isSubmitting})=>(
        <Form>
          <Field type="username" name="username" />
