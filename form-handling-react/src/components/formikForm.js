@@ -2,15 +2,15 @@ import React from 'react'
 import * as Yup from 'yup';
 import {Formik,Form,Field,ErrorMessage} from "formik"
 let schema =Yup.object().shape({
-    username : Yup.string
+    username : Yup.string()
     .min(2,'username too short')
-    .required,
+    .required(),
     email: Yup.string()
     .email("Invalid email")
-    .required,
+    .required(),
     password :Yup.string()
     .min(3,"password too short")
-    .required
+    .required()
    
 })
 function formikForm() {
