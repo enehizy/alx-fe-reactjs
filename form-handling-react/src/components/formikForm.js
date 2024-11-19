@@ -3,14 +3,16 @@ import * as Yup from 'yup';
 import {Formik,Form,Field,ErrorMessage} from "formik"
 let schema =Yup.object().shape({
     username : Yup.string()
-    .min(2,'username too short')
-    .required(),
-    email: Yup.string()
-    .email("Invalid email")
-    .required(),
-    password :Yup.string()
-    .min(3,"password too short")
     .required()
+    .min(2,'username too short'),
+    email: Yup.string()
+    .required()
+    .email("Invalid email"),
+
+    password :Yup.string()
+    .required()
+    .min(3,"password too short"),
+   
    
 })
 function formikForm() {
