@@ -8,7 +8,7 @@ function RegistrationForm() {
    const submitForm = (e)=>{
      e.preventDefault();
 
-     if (username !== "" && email !== "" && password !== ""){
+     if (!username  && !email&& !password ){
        return true
      }
      return false
