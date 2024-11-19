@@ -2,10 +2,10 @@ import React from 'react'
 import { useQuery } from 'react-query'
 
 function PostsComponent() {
-    let [isPending, error, data] =useQuery({
-        queryKey:'users',
+    let [isPending, isError,error,isLoading, data] =useQuery({
+        queryKey:'posts',
         queryFn:async()=>{
-           let response = fetch("https://jsonplaceholder.typicode.com/users");
+           let response = fetch("https://jsonplaceholder.typicode.com/posts");
            return response.json()
         }
     })
@@ -15,9 +15,9 @@ function PostsComponent() {
   
     return (
       <div>
-        <h1>{data.name}</h1>
-        <p>{data.email}</p>
-        <p>{data.phone}</p>
+        <h1>{data.title}</h1>
+        <p>{data.body}</p>
+     
         
       </div>
     )
