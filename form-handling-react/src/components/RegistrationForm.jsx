@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 function RegistrationForm() {
-    let [email, setEmail] = useState("");
+    let [username, setUsername] = useState("");
    let [password,setPassword] = useState("");
 
    const submitForm = (e)=>{
@@ -14,7 +14,7 @@ function RegistrationForm() {
    }
   return (
  <form onSubmit={submitForm}>
-    <input name="email" autoComplete="username" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
+    <input name="email" autoComplete="username" value={username} onChange={(e)=>{setUsername(e.target.value)}}/>
     <input name="password" type="password" autoComplete="new-password" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
    <button>submit</button>
  </form>
