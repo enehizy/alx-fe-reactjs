@@ -4,14 +4,19 @@ function RegistrationForm() {
     let [username, setUsername] = useState("");
     let [email, setEmail] = useState("");
    let [password,setPassword] = useState("");
-
+    let  [errors,setErrors]= useState([]);
    const submitForm = (e)=>{
      e.preventDefault();
 
-     if (!username  && !email&& !password ){
-       return true
+     if (!username){
+       setErrors([...errors,'username not provided'])
      }
-     return false
+     if(!password){
+        setErrors([...errors,'password not provided'])
+     }
+     if(!email){
+        setErrors([...errors,'email not provided'])
+     }
    }
   return (
  <form onSubmit={submitForm}>
