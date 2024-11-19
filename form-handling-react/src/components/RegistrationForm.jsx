@@ -11,10 +11,10 @@ function RegistrationForm() {
      if (!username){
        setErrors([...errors,'username not provided'])
      }
-     if(!password){
+     if (!password){
         setErrors([...errors,'password not provided'])
      }
-     if(!email){
+     if (!email){
         setErrors([...errors,'email not provided'])
      }
    }
