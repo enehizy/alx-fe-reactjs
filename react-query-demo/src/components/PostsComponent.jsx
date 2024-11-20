@@ -5,12 +5,16 @@ import { useQuery } from 'react-query'
     return response.json()
   }
 function PostsComponent() {
-    let [isPending, isError,error,isLoading, data] =useQuery({
+    let [isError,error,isLoading, data] =useQuery({
         queryKey:'posts',
         queryFn:fetchPosts(),
-        staleTime : 1000 * 5
+        staleTime : 0,
+        cacheTime:0,
+        refetchOnWindowFocus:false,
+        keepPreviousData:false
+      
     })
-    if (isPending) return 'Loading...'
+    if (isLoading) return 'Loading...'
 
     if (error) return 'An error has occurred: ' + error.message
   
