@@ -5,7 +5,7 @@ import { useQuery } from 'react-query'
     return response.json()
   }
 function PostsComponent() {
-    let [isError,error,isLoading, data] =useQuery({
+    let {isError,error,isLoading, data,refetch} =useQuery({
         queryKey:'posts',
         queryFn:fetchPosts(),
         staleTime : 0,
@@ -23,7 +23,7 @@ function PostsComponent() {
         <h1>{data.title}</h1>
         <p>{data.body}</p>
      
-        
+        <button onClick={()=> refetch()}>refresg post</button>
       </div>
     )
 }
