@@ -7,7 +7,8 @@ import { useQuery } from 'react-query'
 function PostsComponent() {
     let [isPending, isError,error,isLoading, data] =useQuery({
         queryKey:'posts',
-        queryFn:fetchPosts
+        queryFn:fetchPosts(),
+        staleTime : 1000 * 5
     })
     if (isPending) return 'Loading...'
 
