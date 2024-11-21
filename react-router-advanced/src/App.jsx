@@ -12,6 +12,7 @@ import ProfileDetails from './components/ProfileDetails';
 import ProfileSettings from './components/ProfileSettings';
 import Profile from './components/Profile'
 import BlogPost from './components/BlogPost';
+import ProtectedRoute from './components/ProtectedRoute';
 const Routes = createBrowserRouter([
   {
     path: "/",
@@ -21,6 +22,10 @@ const Routes = createBrowserRouter([
   {
     path : '/blog',
     element : <Route path='/blog/:id' element={<BlogPost/>}/>
+  }
+  ,{
+    path : '/profile',
+    element : <ProtectedRoute/>
   }
 ]);
 
