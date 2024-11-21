@@ -11,22 +11,17 @@ import {
 import ProfileDetails from './components/ProfileDetails';
 import ProfileSettings from './components/ProfileSettings';
 import Profile from './components/Profile'
+import BlogPost from './components/BlogPost';
 const Routes = createBrowserRouter([
   {
     path: "/",
     element: <Profile/>,
-    children:[
-      {
-      path: "details",
-      element : <ProfileDetails/>
-    },
-    {
-      path: "settings",
-      element :<ProfileSettings/>
-    },
-  ]
+   
   },
-  
+  {
+    path : '/blog',
+    element : <Route path='/blog/:id' element={<BlogPost/>}/>
+  }
 ]);
 
 function App() {
