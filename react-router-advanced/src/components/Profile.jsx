@@ -1,5 +1,19 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route,createBrowserRouter,createRoutesFromElements} from 'react-router-dom'
+import ProfileDetails from './ProfileDetails';
+import ProfileSettings from './ProfileSettings';
+import Profile from './Profile'
+const Routes = createBrowserRouter(createRoutesFromElements(
+    <Route path="/" element={<Profile />}>
+    <Route path="details" element={<ProfileDetails />} />
+    <Route
+      path="settingd"
+      element={<ProfileSettings/>}
+      
+    />
+    
+  </Route>
+));
 function Profile() {
   return (
     <>
@@ -8,19 +22,7 @@ function Profile() {
     </div>
 
 
-    <Route path="/" element={<Root />}>
-      <Route path="contact" element={<Contact />} />
-      <Route
-        path="dashboard"
-        element={<Dashboard />}
-        loader={({ request }) =>
-          fetch("/api/dashboard.json", {
-            signal: request.signal,
-          })
-        }
-      />
-      
-    </Route>
+   
     </>
   )
 }
