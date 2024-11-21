@@ -8,11 +8,23 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-
+import ProfileDetails from './components/ProfileDetails';
+import ProfileSettings from './components/ProfileSettings';
+import Profile from './components/Profile'
 const Routes = createBrowserRouter([
   {
     path: "/",
     element: <Profile/>,
+    children:[
+      {
+      path: "details",
+      element : <ProfileDetails/>
+    },
+    {
+      path: "settings",
+      element :<ProfileSettings/>
+    },
+  ]
   },
   
 ]);
