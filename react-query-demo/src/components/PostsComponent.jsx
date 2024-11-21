@@ -23,7 +23,7 @@ function PostsComponent() {
         <h1>{data.title}</h1>
         <p>{data.body}</p>
      
-        <button onClick={()=> refetch()}>refresg post</button>
+        <button onClick={()=> refetch()}>refresh post</button>
       </div>
     )
 }
