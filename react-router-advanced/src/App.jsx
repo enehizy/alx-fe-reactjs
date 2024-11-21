@@ -9,7 +9,7 @@ import {
   Link,
 } from "react-router-dom";
 
-const router = createBrowserRouter([
+const Routes = createBrowserRouter([
   {
     path: "/",
     element: <Profile/>,
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <RouterProvider router={Routes} />
   )
 }
 
