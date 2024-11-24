@@ -1,17 +1,25 @@
-import React from 'react'
+const addTodoForm = ({ addTodo }) => {
+  const [inputValue, setInputValue] = useState("");
 
-function AddTodoForm(updateTodo) {
-    const submitForm =(e)=>{
-       e.preventDefault();
-      const task = e.target.task;
-     console.log({task})
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (inputValue.trim()) {
+      addTodo(inputValue);
+      setInputValue("");
     }
-  return (
-    <form onSubmit={(e)=> submitForm(e)}>
-        <input name ="task" type="text" placeholder="new task" />
-         <button type="submit">submit</button>
-    </form>
-  )
-}
+  };
 
-export default AddTodoForm
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Add a new todo"
+      />
+      <button type="submit">Add Todo</button>
+    </form>
+  );
+};
+
+export default addTodoForm
