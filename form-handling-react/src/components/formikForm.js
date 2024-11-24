@@ -1,38 +1,32 @@
-import React from 'react'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import {Formik,Form,Field,ErrorMessage} from "formik"
-let schema =Yup.object().shape({
-    username : Yup.string()
-    .required
-    .min(2,'username too short'),
-    email: Yup.string()
-    .required
-    .email("Invalid email"),
 
-    password :Yup.string()
-    .required
-    .min(3,"password too short"),
-   
-   
-})
-function formikForm() {
-  return (
-   <Formik initialValues={{email :"" ,password: "" , username :""}} validationSchema={schema}>
-     {({isSubmitting})=>(
-       <Form>
-         <Field type="username" name="username" />
-         <ErrorMessage name="username" component="div" />
-       <Field type="email" name="email" />
-       <ErrorMessage name="email" component="div" />
-       <Field type="password" name="password" />
-       <ErrorMessage name="password" component="div" />
-       <button type="submit" disabled={isSubmitting}>
-         Submit
-       </button>
-     </Form>
-     )}
-   </Formik>
-  )
-}
+const validationSchema = Yup.object({
+    name: Yup.string().required('Name is required'),
+    email: Yup.string().email('Invalid email').required('Email is required'),
+    password: Yup.string().password('Invalid password').required('Password is required')
+});
 
-export default formikForm
+const FormikForm = () => (
+    <Formik
+        initialValues={{ name: '', email: '', password: '' }}
+        validationSchema={validationSchema}
+        onSubmit={(values) => {
+            console.log(values);
+        }}
+    >
+        {() => (
+            <Form>
+                <Field type='text' name='name' />
+                <ErrorMessage name='name' component={div} />
+                <Field type='email' name='email' />
+                <ErrorMessage name='email' component={div} />
+                <Field type='password' name='password' />
+                <ErrorMessage name='password' component={div} />
+                <button type='submit'>Submit</button>
+            </Form>
+        )}
+    </Formik>
+);
+
+export default FormikForm
