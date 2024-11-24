@@ -1,59 +1,43 @@
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import TodoList from '../components/TodoList';
+const React = require("react");
+const { render, screen, fireEvent } = require("@testing-library/react");
+require("@testing-library/jest-dom");
+const TodoList = require("../components/TodoList");
 
-describe("TodoList Component", () => {
-  test("renders initial state correctly", () => {
-    render(<TodoList />);
-    
-    // Check that demo todos are rendered
-    expect(screen.getByText(/Buy groceries/i)).toBeInTheDocument();
-    expect(screen.getByText(/Complete project report/i)).toBeInTheDocument();
+describe("TodoList Component", function () {
+  it("renders initial todos", function () {
+    render(React.createElement(TodoList, null));
+    expect(screen.getByText("Learn React")).toBeInTheDocument();
+    expect(screen.getByText("Build a Todo List")).toBeInTheDocument();
+    expect(screen.getByText("Write Tests")).toBeInTheDocument();
   });
 
-  test("adds a new todo", () => {
-    render(<TodoList />);
-    
-    const input = screen.getByPlaceholderText(/add a new task/i);
-    const button = screen.getByText(/add/i);
+  it("adds a new todo", function () {
+    render(React.createElement(TodoList, null));
+    const input = screen.getByRole("textbox");
+    const addButton = screen.getByRole("button", { name: /add todo/i });
 
-    // Simulate user input and form submission
-    fireEvent.change(input, { target: { value: "Learn React" } });
-    fireEvent.click(button);
+    fireEvent.change(input, { target: { value: "New Todo" } });
+    fireEvent.click(addButton);
 
-    // Check if the new todo is added
-    expect(screen.getByText(/Learn React/i)).toBeInTheDocument();
+    expect(screen.getByText("New Todo")).toBeInTheDocument();
   });
 
-  test("toggles a todo item", () => {
-    render(<TodoList />);
-    
-    const todo = screen.getByText(/Buy groceries/i);
-    const checkbox = todo.previousSibling; // Assuming a checkbox is used
+  it("toggles a todo", function () {
+    render(React.createElement(TodoList, null));
+    const todoItem = screen.getByText("Learn React");
 
-    // Check initial state
-    expect(checkbox).not.toBeChecked();
+    fireEvent.click(todoItem);
+    expect(todoItem).toHaveStyle("text-decoration: line-through");
 
-    // Toggle to completed
-    fireEvent.click(checkbox);
-    expect(checkbox).toBeChecked();
-
-    // Toggle back to not completed
-    fireEvent.click(checkbox);
-    expect(checkbox).not.toBeChecked();
+    fireEvent.click(todoItem);
+    expect(todoItem).not.toHaveStyle("text-decoration: line-through");
   });
 
-  test("deletes a todo", () => {
-    render(<TodoList />);
+  it("deletes a todo", function () {
+    render(React.createElement(TodoList, null));
+    const deleteButton = screen.getByText("Learn React").nextSibling;
 
-    const todo = screen.getByText(/Buy groceries/i);
-    const deleteButton = todo.nextSibling; // Assuming a delete button is next to the todo
-
-    // Delete the todo
     fireEvent.click(deleteButton);
-
-    // Check if the todo is removed
-    expect(screen.queryByText(/Buy groceries/i)).not.toBeInTheDocument();
+    expect(screen.queryByText("Learn React")).not.toBeInTheDocument();
   });
 });
