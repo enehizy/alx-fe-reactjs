@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
-
+import dataJson from '../data.json';
+import { useParams } from 'react-router-dom';
 function RecipeDetail() {
   let [data,setData]=useState();
   useEffect(()=>{
