@@ -11,15 +11,15 @@ function RecipeDetail() {
      {data.map(({details: {instructions,ingredients},image})=>(
         <div className="shadow-sm rounded-lg hover:shadow-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
            <img src={`${image}`}/>
-           <h3>instructions: </h3>
+           <h3 className='text-blue-600'>instructions: </h3>
           <ul>
-            {instructions.map((instruction)=>(<li>
+            {instructions.map((instruction)=>(<li className='font-mono'>
               {instruction}
             </li>))}
           </ul>
-          <h3>ingredients: </h3>
+          <h3 className='text-blue-600'>ingredients: </h3>
           <ul>
-            {ingredients.map((ingredient)=>(<li>
+            {ingredients.map((ingredient)=>(<li className='font-mono'>
               {ingredient}
             </li>))}
           </ul>
