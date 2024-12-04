@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import dataJson from '../src/data.json'
+import dataJson from '../data.json'
 function HomePage() {
     let [data,setData]=useState();
     useEffect(()=>{
