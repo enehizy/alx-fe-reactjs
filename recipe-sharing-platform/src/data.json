@@ -1,62 +1,109 @@
 [
-    {
-      "id": 1,
-      "title": "Spaghetti Carbonara",
-      "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 2,
-      "title": "Chicken Tikka Masala",
-      "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 3,
-      "title": "Vegetable Stir Fry",
-      "summary": "A quick and healthy dish with mixed vegetables tossed in a savory sauce.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 4,
-      "title": "Beef Stroganoff",
-      "summary": "Tender beef cooked in a creamy mushroom sauce served over noodles.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 5,
-      "title": "Caesar Salad",
-      "summary": "A fresh salad with romaine lettuce, croutons, Parmesan cheese, and Caesar dressing.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 6,
-      "title": "Margherita Pizza",
-      "summary": "A simple yet delicious pizza topped with tomatoes, mozzarella, and basil.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 7,
-      "title": "Shrimp Scampi",
-      "summary": "Succulent shrimp cooked in a garlic, butter, and white wine sauce, served over pasta.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 8,
-      "title": "Vegetarian Chili",
-      "summary": "A hearty and flavorful chili made with beans, vegetables, and spices.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 9,
-      "title": "Pancakes",
-      "summary": "Fluffy pancakes perfect for breakfast, served with syrup and fresh berries.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 10,
-      "title": "Classic Burger",
-      "summary": "A juicy beef patty with lettuce, tomato, cheese, and your favorite condiments.",
-      "image": "https://via.placeholder.com/150"
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/150",
+    "details": {
+      "ingredients": [
+        "400g spaghetti",
+        "4 large eggs",
+        "100g grated Parmesan cheese",
+        "150g pancetta or bacon, diced",
+        "2 cloves garlic, minced",
+        "Salt and freshly ground black pepper"
+      ],
+      "instructions": [
+        "Cook the spaghetti in salted boiling water until al dente, then drain.",
+        "In a bowl, whisk eggs and mix in the grated Parmesan cheese.",
+        "Fry the pancetta in a pan until crisp. Add garlic and cook briefly.",
+        "Add the hot spaghetti to the pan and toss to coat in the pancetta fat.",
+        "Remove from heat and mix in the egg and cheese mixture quickly to avoid scrambling the eggs.",
+        "Season with salt and freshly ground black pepper. Serve immediately."
+      ]
     }
-  ]
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato-based gravy.",
+    "image": "https://via.placeholder.com/150",
+    "details": {
+      "ingredients": [
+        "500g chicken breast, cut into cubes",
+        "1 cup yogurt",
+        "2 tbsp garam masala",
+        "2 tsp paprika",
+        "2 tbsp butter",
+        "1 onion, finely chopped",
+        "3 cloves garlic, minced",
+        "1 tsp grated ginger",
+        "400g canned tomatoes",
+        "1 cup heavy cream",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Marinate the chicken in yogurt, garam masala, paprika, salt, and pepper for at least 2 hours.",
+        "Grill or pan-fry the chicken until cooked through and set aside.",
+        "In a pan, melt butter and sauté onions until soft. Add garlic and ginger, cooking until fragrant.",
+        "Add the canned tomatoes and simmer until thickened.",
+        "Stir in the cream and cooked chicken, and simmer for 5 minutes.",
+        "Serve hot with rice or naan."
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Vegetable Stir Fry",
+    "summary": "A quick and healthy dish with mixed vegetables tossed in a savory sauce.",
+    "image": "https://via.placeholder.com/150",
+    "details": {
+      "ingredients": [
+        "2 tbsp vegetable oil",
+        "1 cup broccoli florets",
+        "1 red bell pepper, sliced",
+        "1 carrot, julienned",
+        "1 zucchini, sliced",
+        "2 tbsp soy sauce",
+        "1 tbsp oyster sauce",
+        "1 tsp sesame oil",
+        "1 tsp cornstarch mixed with 2 tbsp water"
+      ],
+      "instructions": [
+        "Heat the vegetable oil in a wok or large pan over high heat.",
+        "Add the broccoli, bell pepper, carrot, and zucchini, and stir-fry for 3-4 minutes.",
+        "Mix soy sauce, oyster sauce, and sesame oil in a small bowl.",
+        "Pour the sauce over the vegetables and stir to coat evenly.",
+        "Add the cornstarch slurry and cook until the sauce thickens slightly.",
+        "Serve immediately over rice or noodles."
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Beef Stroganoff",
+    "summary": "Tender beef cooked in a creamy mushroom sauce served over noodles.",
+    "image": "https://via.placeholder.com/150",
+    "details": {
+      "ingredients": [
+        "500g beef strips",
+        "2 tbsp olive oil",
+        "1 onion, diced",
+        "2 cups mushrooms, sliced",
+        "1 cup beef stock",
+        "1 cup sour cream",
+        "2 tbsp flour",
+        "Salt and pepper to taste",
+        "Cooked egg noodles, for serving"
+      ],
+      "instructions": [
+        "Heat olive oil in a pan and cook beef strips until browned. Remove and set aside.",
+        "Sauté onions and mushrooms in the same pan until soft.",
+        "Sprinkle flour over the vegetables and cook for 1 minute.",
+        "Gradually add beef stock, stirring constantly, and bring to a simmer.",
+        "Stir in sour cream and add the cooked beef back to the pan. Simmer for 5 minutes.",
+        "Serve hot over egg noodles."
+      ]
+    }
+  }
+]
