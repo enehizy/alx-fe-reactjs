@@ -4,8 +4,11 @@ const handleSubmit=(e)=>{
   e.preventDefault();
   // e.target.value
 }
+const validate=(formData)=>{
+
+}
 function AddRecipeForm() {
-    const [formDate,setFormData] =useState();
+    const [errors,setErrors] =useState();
   return (
     <form onSubmit={(e)=> handleSubmit(e)}>
        <label for="title">Recipe Title</label>
