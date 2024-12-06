@@ -1,11 +1,13 @@
 import React from 'react'
 
-const submitForm=(e)=>{
+const handleSubmit=(e)=>{
   e.preventDefault();
+  // e.target.value
 }
 function AddRecipeForm() {
+    const [formDate,setFormData] =useState();
   return (
-    <form onSubmit={(e)=> submitForm(e)}>
+    <form onSubmit={(e)=> handleSubmit(e)}>
        <label for="title">Recipe Title</label>
       <input type="text" id="title" name="title" placeholder="Enter recipe title" required/>
 
