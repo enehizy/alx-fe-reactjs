@@ -20,7 +20,7 @@ function AddRecipeForm() {
     <label for="steps" className='text-lg font-medium'>Preparation Steps</label>
     <textarea id="steps" name="steps" rows="5" placeholder="Describe the preparation steps, one per line" required></textarea>
 
-    <button type="submit" className='text-lg font-medium'>Submit Recipe</button> 
+    <button type="submit" className='rounded-lg'>Submit Recipe</button> 
     </form>
   )
 }
