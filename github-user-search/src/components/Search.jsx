@@ -4,6 +4,7 @@ import {useQuery} from '@tanstack/react-query'
 function Search() {
     const handleSubmit=(e)=>{
       e.preventDefault();
+    //   e.target.value
     setUsername(e.target.username.value)
     }
     const [username,setUsername]=React.useState('');
