@@ -29,6 +29,7 @@ function Search() {
         <img src={data.avatar_url}/>
         <h2>{data.name}</h2>
         <a href={data.html_url}>link to github</a>
+        <i>@{data.login}</i>
     </div>
   )}
   </>
