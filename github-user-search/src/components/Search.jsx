@@ -7,14 +7,17 @@ function Search() {
       e.preventDefault();
     //   e.target.value!== '' 
     const params = []
-    if(e.target.username.value ){
-      params.push(`${e.target.username.value} in:login`)
+    const username = e.target.username.value;
+    const minRepos =e.target.minimum_repos.value;
+    const location = e.target.location.value;
+    if(username){
+      params.push(`${username} in:login`)
     }
-    if(e.target.minimum_repos.value){
-      params.push(`repos:>=${e.target.minimum_repos.value}`)
+    if(minRepos){
+      params.push(`repos:>=${minRepos}`)
     }
-    if(e.target.location.value){
-      params.push(`location:"${e.target.location.value}"`)
+    if(location){
+      params.push(`location:"${location}"`)
     }
     const urlQuery = new URLSearchParams(params.join(" "))
    
