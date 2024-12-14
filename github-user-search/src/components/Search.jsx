@@ -6,27 +6,36 @@ function Search() {
     const handleSubmit=(e)=>{
       e.preventDefault();
     //   e.target.value!== '' 
-  
-    const urlQuery = new URLSearchParams({
-      username: e.target.username.value ,
-      location : e.target.location.value ,
-      mimumum_repositories:e.target.minimum_repos.value
-    })
-    // console.log(urlQuery.toString())
+    const params = []
+    if(e.target.username.value ){
+      params.push(`${e.target.username.value} in:login`)
+    }
+    if(e.target.minimum_repos.value){
+      params.push(`repos:>=${e.target.minimum_repos.value}`)
+    }
+    if(e.target.location.value){
+      params.push(`location:"${e.target.location.value}"`)
+    }
+    const urlQuery = new URLSearchParams(params.join(" "))
+   
     setQuery(urlQuery.toString())
     }
     const [query,setQuery]=React.useState('');
    const {data ,isLoading,isError,isSuccess}= useQuery({
     queryKey:['user',query],
-    queryFn :()=>{
-      return fetchUserData(query)
+    queryFn :async()=>{
+    let data=await fetchUserData(query);
+   if(data.items.length <= 0){
+    throw 'user not found'
+   }
+   return data.items
     },
     enabled: query !== ''
    })
   return (
     <>
-     <form className='flex  gap-5 justify-center '   onSubmit={(e)=>{handleSubmit(e)}}>
-      <div className='flex  gap-5 items-center'>
+     <form className='md:flex  md:gap-5 justify-center '   onSubmit={(e)=>{handleSubmit(e)}}>
+      <div className='md:flex  md:gap-5 items-center'>
         <SearchInput name="username" placeholder="search github usernames " labelText="Search by Username"/>
         <SearchInput name="location" placeholder="search repo in a location '" labelText="Search by Location"/>
         <SearchInput name="minimum_repos" placeholder="search by minimum rtepo '" labelText="Search by minimum repo"/>
@@ -36,15 +45,22 @@ function Search() {
     
    </form>
 
-  {isLoading&&'Loading...'}
-  {isError&&'Looks like we cant find the user'}
+  {isLoading&&(<p className='flex justify-center items-center text-blue-500'>Loading...</p>)}
+  {isError&&(<p className='flex justify-center items-center text-red-600'>Looks like we cant find the user</p>)}
+ 
   {isSuccess&&(
-    <div className='flex flex-col justify-center items-center mt-20 gap-3'>
-        <img src={data.avatar_url} className='w-[200px] h-[200px]'/>
-        <h2 className='font-mono text-lg'>{data.name}</h2>
-        <a className='text-blue-400 underline' href={data.html_url}>link to github</a>
-        <i className='italic text-sm'>@{data.login}</i>
-    </div>
+    <div className='grid grid-cols-2 md:grid-cols-4 justify-center '>
+          {data.map(({name,avatar_url,login,html_url})=>(
+          <div className='flex flex-col flex-wrap justify-center items-center mt-20 gap-3'>
+          <img src={avatar_url} className='w-[200px] h-[200px]'/>
+          <div className='px-14 py-5 shadow-lg flex flex-col justify-center items-center gap-3'>
+          <h2 className='font-mono text-lg'>{name}</h2>
+          <a className='text-blue-400 underline' href={html_url}>link to github</a>
+          <i className='italic text-sm'>@ {login}</i>
+          </div>
+          
+      </div>
+    ))}</div>
   )}
   </>
   )

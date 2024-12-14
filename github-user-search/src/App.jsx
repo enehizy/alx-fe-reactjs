@@ -3,7 +3,7 @@ import Search from './components/Search'
 function App() {
   
   return (<>
-  <h1 className='text-center text-2xl my-10'>GITHUB SEARCH APP</h1>
+  <h1 className='text-center text-2xl font-extrabold my-10'>GITHUB SEARCH APP</h1>
   <Search/>
   </>)
 }
