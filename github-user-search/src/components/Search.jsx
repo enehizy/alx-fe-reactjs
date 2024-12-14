@@ -38,18 +38,19 @@ function Search() {
   return (
     <>
      <form className='md:flex  md:gap-5 justify-center '   onSubmit={(e)=>{handleSubmit(e)}}>
-      <div className='md:flex  md:gap-5 items-center'>
+      <div className='md:flex  md:gap-10 items-center '>
         <SearchInput name="username" placeholder="search github usernames " labelText="Search by Username"/>
         <SearchInput name="location" placeholder="search repo in a location '" labelText="Search by Location"/>
         <SearchInput name="minimum_repos" placeholder="search by minimum rtepo '" labelText="Search by minimum repo"/>
       </div>
-     <button className='bg-blue-800 text-white rounded-lg py-3 px-5 mt-5' type='submit'>search</button>
+     <button className='bg-blue-800 text-white rounded-full py-2 px-8 mt-6' type='submit'>search</button>
     
     
    </form>
 
-  {isLoading&&(<p className='flex justify-center items-center text-blue-500'>Loading...</p>)}
-  {isError&&(<p className='flex justify-center items-center text-red-600'>Looks like we cant find the user</p>)}
+  {isLoading&&(<p className='flex justify-center items-center text-blue-500 mt-10 font-semibold'>Loading...</p>)}
+ 
+  {isError&&(<p className='flex justify-center items-center text-red-600 mt-10 font-semibold'>Looks like we cant find the user</p>)}
  
   {isSuccess&&(
     <div className='grid grid-cols-2 md:grid-cols-4 justify-center '>
