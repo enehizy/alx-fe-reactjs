@@ -2,6 +2,9 @@ import React from 'react'
 import { fetchUserData } from '../services/githubService';
 import {useQuery} from '@tanstack/react-query'
 import SearchInput from './SearchInput';
+import Lottie from 'lottie-react';
+import LoadingJson from '../github-loading.json';
+import Error404 from '../404.json';
 function Search() {
     const handleSubmit=(e)=>{
       e.preventDefault();
@@ -48,9 +51,12 @@ function Search() {
     
    </form>
 
-  {isLoading&&(<p className='flex justify-center items-center text-blue-500 mt-10 font-semibold'>Loading...</p>)}
+  {isLoading&&(<div className='flex justify-center items-center mt-10'>{/* Loading... */}<Lottie className='w-60 h-60 flex justify-center items-center' animationData={LoadingJson}/></div>)}
  
-  {isError&&(<p className='flex justify-center items-center text-red-600 mt-10 font-semibold'>Looks like we cant find the user</p>)}
+  {isError&&(<div className='flex justify-center items-center flex-col mt-10'>
+    <Lottie   animationData={Error404}/>
+  <p className='flex justify-center items-center text-red-600 mt-10 font-semibold'>Looks like we cant find the user</p>
+  </div>)}
  
   {isSuccess&&(
     <div className='grid grid-cols-2 md:grid-cols-4 justify-center '>
